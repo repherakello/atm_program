@@ -1,37 +1,37 @@
-import sys
-
-
-def greet_user(username: str):
-    """
-    This is a function that takes a username and prints out a greeting to the console,
-    """
-    return f"Hello,{username}"
-
-# name = input("Enter your name: ")
-# greet_user(name)
-is_logged_in = False
-def pin_entry():
-    sim_pin = 1234
-    pin = eval(input("Enter your pin"))
-    if pin == sim_pin:
-        print("Correct entry granted")
-        is_logged_in = True
-        return is_logged_in
+def enter_password(pin):
+    if pin == 1234:
+        print(1)
+        return True
     else:
-        print("Wrong pin try again")
+        print(1)
+        return False
 
-def something():
-    allowed = True
+def login_user():
     attempts = 0
-    while allowed:
-        while attempts < 3:
-            pin_entry()
-            attempts += 1
-        print("Sorry sim blocked")
-        allowed = False
+
+    while attempts < 3:
+        pin = eval(input("Enter your pin"))
+        val = enter_password(pin)
+        if val:
+            print("User logged in Succesfully")
+            break
+        else:
+            print("Incorrect password Enter again")
+
+        attempts += 1
+
+    print(2)
+
+    return val
+
 def main():
-    if is_logged_in == False:
-        something()
+    is_logged_in = login_user()
+    print(is_logged_in)
+    if is_logged_in:
+        print("Menu")
     else:
-        pass
+        print("Too many attempts account locked")
+
+    print(3)
+
 main()
