@@ -18,17 +18,15 @@ while choice < 5:
             pin =eval(input("enter your pin here:"))
             if pin in range(1000,2000000):
                 print("thank you for registaring with us!Would you like to start your saving with us.yes / no")
-                yes = answer
-               
-                no = answer
-                eval(input("enter your answer:"))
-                if answer == yes:
+                
+                decision =eval(input("enter your answer:"))
+                if decision== "yes": 
                    accountblan = random.random()
                    deposit =eval(input("enter amount deposit:ksh"))
                    cash = format(deposit + accountblan)
                    print("your account balance was:ksh",accountblan,"and with the deposit it is now:Ksh",cash)
-                   break
-                if answer == no:
+                    
+                elif decision == "no":
                    print("Thank you for your registration!") 
                       
                 break
@@ -70,7 +68,10 @@ while choice < 5:
     sys.exit(3)
   elif choice == 4:
     print("you have choosen to exchange your currency to foreign")
+    sys.exit(4)
   else:
-     print("Thank you but the service aint available!")
+       if choice >= 5:
+        print("Thank you but the service aint available!")
+ 
 
 
