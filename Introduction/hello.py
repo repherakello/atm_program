@@ -1,7 +1,15 @@
-print('Hello world')
-print('Introduction To Python')
-print(2 * 8)
-print("Python is easy")
-print(43 * 0.54)
-print('Python does all mathematical sums! Example is')
+# scopes where you use globa to change value of the global variables
+name = input("enter your name: ")
+name2 =input("enter your second name:")
 
+def MY_NAME():
+    """
+    this function takes the name of the user and display on the console
+    """
+ 
+    global x
+    name = "akello"
+    name2 = "repher"
+    print("My name is",name,name2)
+MY_NAME() 
+     
