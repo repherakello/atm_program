@@ -16,22 +16,36 @@ def registration_point():
             else:
                 break    
 
+        """
+if the user provides correct input, as yes then the programme should execute to ask user to add the id
+what if the user adds the id as a string?what if the user sums different types of data types?
+the programme should not fail if any of this take place at any point of id or pin insertion...
 
+    """
         if answer == "yes":
-            for id in range(3):
+            count = 0
+            while count < 3:
                 id =eval(input("enter your id:"))
+                if id in range(1000,3000000):
+                    print("succesfull addition of id:")
+                    break
                 if id not in range(1000,3000000):
                     print("Wrong input try again!")
+                    count +=1    
                 else:
                     break 
                    
-            for pin in range(3):        
+        if id == range(1000,3000000):           
+            while count < 3:       
                 pin =eval(input("enter your pin here:"))
+                if pin in range(1000,2000000):
+                    for count in range(2):
+                        print("add the pin you used the second time for confirmation.")
                 if pin not in range(1000,2000000):
                     print("wrong input try again!")
                 else:
                     break    
-                print("thank you for registaring with us!Would you like to start your saving with us.yes / no")
+            print("thank you for registaring with us!Would you like to start your saving with us.yes / no")
                 
             decision =eval(input("enter your answer:"))
 
